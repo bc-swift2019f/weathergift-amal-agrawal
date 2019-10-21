@@ -14,6 +14,7 @@
 		765AC39A2356AD180039A208 /* DetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765AC3992356AD180039A208 /* DetailVC.swift */; };
 		765AC39C2356B0C50039A208 /* ListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765AC39B2356B0C50039A208 /* ListVC.swift */; };
 		765AC39E2356B29D0039A208 /* PageVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 765AC39D2356B29D0039A208 /* PageVC.swift */; };
+		76637D90235E376D00D35C77 /* WeatherLocation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 76637D8F235E376D00D35C77 /* WeatherLocation.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		765AC3992356AD180039A208 /* DetailVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailVC.swift; sourceTree = "<group>"; };
 		765AC39B2356B0C50039A208 /* ListVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListVC.swift; sourceTree = "<group>"; };
 		765AC39D2356B29D0039A208 /* PageVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageVC.swift; sourceTree = "<group>"; };
+		76637D8F235E376D00D35C77 /* WeatherLocation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeatherLocation.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 			children = (
 				765AC3872356AC9D0039A208 /* AppDelegate.swift */,
 				765AC39D2356B29D0039A208 /* PageVC.swift */,
+				76637D8F235E376D00D35C77 /* WeatherLocation.swift */,
 				765AC3992356AD180039A208 /* DetailVC.swift */,
 				765AC39B2356B0C50039A208 /* ListVC.swift */,
 				765AC38B2356AC9D0039A208 /* Main.storyboard */,
@@ -141,6 +144,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				76637D90235E376D00D35C77 /* WeatherLocation.swift in Sources */,
 				765AC39C2356B0C50039A208 /* ListVC.swift in Sources */,
 				765AC39E2356B29D0039A208 /* PageVC.swift in Sources */,
 				765AC3882356AC9D0039A208 /* AppDelegate.swift in Sources */,

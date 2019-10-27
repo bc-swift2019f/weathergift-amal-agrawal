@@ -25,7 +25,7 @@ class PageVC: UIPageViewController {
         dataSource = self
         
         var newLocation = WeatherLocation()
-        newLocation.name = "Unknown Weather Location"
+        newLocation.name = ""
         locationsArray.append(newLocation)
         
         setViewControllers([createDetailVC(forPage: 0)], direction: .forward, animated: false, completion: nil)

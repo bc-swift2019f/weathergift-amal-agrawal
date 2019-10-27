@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import CoreLocation
 
 class DetailVC: UIViewController {
 
@@ -18,6 +19,9 @@ class DetailVC: UIViewController {
     
     var currentPage = 0
     var locationsArray = [WeatherLocation]()
+    var locationManager: CLLocationManager!
+    var currentlocation: CLLocation!
+    
     
     
     override func viewDidLoad() {
@@ -25,6 +29,55 @@ class DetailVC: UIViewController {
 
         locationLabel.text = locationsArray[currentPage].name
         dateLabel.text = locationsArray[currentPage].coordinates
+    }
+
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        if currentPage == 0 {
+            getLocation()
+        }
+    }
+}
+
+extension DetailVC: CLLocationManagerDelegate {
+    
+    func getLocation() {
+        locationManager = CLLocationManager()
+        locationManager.delegate = self
+        let status = CLLocationManager(status: status)
+        handleLocationAuthorization(status: status)
+    }
+    
+    func handleLocationAuthorizationStatus(status: CLAuthorizationStatus) {
+        switch status {
+        case .notDetermined:
+            locationManager.requestWhenInUseAuthorization()
+        case .authorizedAlways, .authorizedWhenInUse:
+            locationManager.requestLocation()
+        case .denied:
+            print("I'm sorry - can't show location. User has not authorized it.")
+        case .restricted:
+            print("Access deined. Likely parental controls restrict location services in this app.")
+        }
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didChangeAuthorization status: CLAuthorizationStatus) {
+        handleLocationAuthorizationStatus(status: status)
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didUpdateLocations locations: [CLLocation]) {
+        currentLocation = locations.last
+        let currentLatitude = currentLocation.coordinate.latitude
+        let currentLongitude = currentLocation.coordinate.longitude
+        let currentCoordinates = "\(currentLatitude),\(currentLongitude)"
+        // for now just print out locations and put them in dateLabel
+        print(currentCoordinates)
+        dateLabel.text = currentCoordinates
+    }
+    
+    func locationManager(_ manager: CLLocationManager, didFailWithError error: Error) {
+        print("Failed to get the location")
+        
     }
     
 }
